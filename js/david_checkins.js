@@ -1,7 +1,6 @@
 var CHECK_INS = {};
 
-CHECK_INS['david'] = {
-  "id": "685681169", 
+CHECK_INS['david'] = { 
   "checkins": {
     "data": [
       {
@@ -951,10 +950,6 @@ CHECK_INS['david'] = {
         "id": "10150241515546170", 
         "created_time": "2011-06-27T05:47:12+0000"
       }
-    ], 
-    "paging": {
-      "previous": "https://graph.facebook.com/685681169/checkins?limit=200&fields=coordinates,place&since=1358480065&__paging_token=10151347716696170", 
-      "next": "https://graph.facebook.com/685681169/checkins?limit=200&fields=coordinates,place&until=1309153632&__paging_token=10150241515546170"
-    }
+    ]
   }
 }

@@ -1,5 +1,4 @@
 CHECK_INS['wei'] = {
-  "id": "692124913", 
   "checkins": {
     "data": [
       {
@@ -206,10 +205,6 @@ CHECK_INS['wei'] = {
         "id": "10150313740534914", 
         "created_time": "2011-09-14T06:15:12+0000"
       }
-    ], 
-    "paging": {
-      "previous": "https://graph.facebook.com/692124913/checkins?limit=200&fields=coordinates,place&since=1361357803&__paging_token=10151439408599914", 
-      "next": "https://graph.facebook.com/692124913/checkins?limit=200&fields=coordinates,place&until=1315980912&__paging_token=10150313740534914"
-    }
+    ]
   }
 }
