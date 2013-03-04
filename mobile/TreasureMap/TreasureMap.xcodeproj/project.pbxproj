@@ -41,6 +41,16 @@
 		4EE0775716E44F8000C1121B /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EE0775516E44F8000C1121B /* FacebookSDKResources.bundle */; };
 		4EE0775816E44F8000C1121B /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EE0775616E44F8000C1121B /* FBUserSettingsViewResources.bundle */; };
 		4EE0775A16E44FB000C1121B /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EE0775916E44FB000C1121B /* GoogleMaps.bundle */; };
+		B23E8F6F16E4633E00A9B481 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F6E16E4633E00A9B481 /* icon57.png */; };
+		B23E8F7116E4634200A9B481 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7016E4634200A9B481 /* icon114.png */; };
+		B23E8F7416E4654100A9B481 /* chest1.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7216E4654100A9B481 /* chest1.png */; };
+		B23E8F7516E4654100A9B481 /* chest1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7316E4654100A9B481 /* chest1@2x.png */; };
+		B23E8F7716E46AAD00A9B481 /* vintage_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7616E46AAD00A9B481 /* vintage_bg.png */; };
+		B23E8F7916E46E8900A9B481 /* profile_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7816E46E8900A9B481 /* profile_frame.png */; };
+		B23E8F7E16E4749000A9B481 /* chest2.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7A16E4749000A9B481 /* chest2.png */; };
+		B23E8F7F16E4749000A9B481 /* chest2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7B16E4749000A9B481 /* chest2@2x.png */; };
+		B23E8F8016E4749000A9B481 /* chest3.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7C16E4749000A9B481 /* chest3.png */; };
+		B23E8F8116E4749000A9B481 /* chest3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23E8F7D16E4749000A9B481 /* chest3@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +94,16 @@
 		4EE0775516E44F8000C1121B /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = SOURCE_ROOT; };
 		4EE0775616E44F8000C1121B /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = SOURCE_ROOT; };
 		4EE0775916E44FB000C1121B /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = SOURCE_ROOT; };
+		B23E8F6E16E4633E00A9B481 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon57.png; path = ../icon57.png; sourceTree = "<group>"; };
+		B23E8F7016E4634200A9B481 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon114.png; path = ../icon114.png; sourceTree = "<group>"; };
+		B23E8F7216E4654100A9B481 /* chest1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest1.png; sourceTree = "<group>"; };
+		B23E8F7316E4654100A9B481 /* chest1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chest1@2x.png"; sourceTree = "<group>"; };
+		B23E8F7616E46AAD00A9B481 /* vintage_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vintage_bg.png; sourceTree = "<group>"; };
+		B23E8F7816E46E8900A9B481 /* profile_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_frame.png; sourceTree = "<group>"; };
+		B23E8F7A16E4749000A9B481 /* chest2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest2.png; sourceTree = "<group>"; };
+		B23E8F7B16E4749000A9B481 /* chest2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chest2@2x.png"; sourceTree = "<group>"; };
+		B23E8F7C16E4749000A9B481 /* chest3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest3.png; sourceTree = "<group>"; };
+		B23E8F7D16E4749000A9B481 /* chest3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chest3@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +217,16 @@
 		4EE0775C16E4519100C1121B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B23E8F7016E4634200A9B481 /* icon114.png */,
+				B23E8F6E16E4633E00A9B481 /* icon57.png */,
+				B23E8F7A16E4749000A9B481 /* chest2.png */,
+				B23E8F7B16E4749000A9B481 /* chest2@2x.png */,
+				B23E8F7C16E4749000A9B481 /* chest3.png */,
+				B23E8F7D16E4749000A9B481 /* chest3@2x.png */,
+				B23E8F7816E46E8900A9B481 /* profile_frame.png */,
+				B23E8F7616E46AAD00A9B481 /* vintage_bg.png */,
+				B23E8F7216E4654100A9B481 /* chest1.png */,
+				B23E8F7316E4654100A9B481 /* chest1@2x.png */,
 				4EE0773B16E44CC000C1121B /* fade_bg.png */,
 				4EE0773C16E44CC000C1121B /* fade_bg@2x.png */,
 				4EE0773D16E44CC000C1121B /* me_pin.png */,
@@ -280,6 +310,16 @@
 				4EE0775716E44F8000C1121B /* FacebookSDKResources.bundle in Resources */,
 				4EE0775816E44F8000C1121B /* FBUserSettingsViewResources.bundle in Resources */,
 				4EE0775A16E44FB000C1121B /* GoogleMaps.bundle in Resources */,
+				B23E8F6F16E4633E00A9B481 /* icon57.png in Resources */,
+				B23E8F7116E4634200A9B481 /* icon114.png in Resources */,
+				B23E8F7416E4654100A9B481 /* chest1.png in Resources */,
+				B23E8F7516E4654100A9B481 /* chest1@2x.png in Resources */,
+				B23E8F7716E46AAD00A9B481 /* vintage_bg.png in Resources */,
+				B23E8F7916E46E8900A9B481 /* profile_frame.png in Resources */,
+				B23E8F7E16E4749000A9B481 /* chest2.png in Resources */,
+				B23E8F7F16E4749000A9B481 /* chest2@2x.png in Resources */,
+				B23E8F8016E4749000A9B481 /* chest3.png in Resources */,
+				B23E8F8116E4749000A9B481 /* chest3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +471,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TreasureMap/TreasureMap-Prefix.pch";
 				INFOPLIST_FILE = "TreasureMap/TreasureMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -446,7 +489,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TreasureMap/TreasureMap-Prefix.pch";
 				INFOPLIST_FILE = "TreasureMap/TreasureMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

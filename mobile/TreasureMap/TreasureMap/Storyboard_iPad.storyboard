@@ -13,21 +13,36 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="fade_bg.png" id="oK8-hs-RBO">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="289"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="132"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Names" lineBreakMode="tailTruncation" minimumFontSize="10" id="Ity-Ng-esB">
-                                <rect key="frame" x="120" y="93" width="140" height="39"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="vintage_bg.png" id="CL5-YA-D7o">
+                                <rect key="frame" x="0.0" y="53" width="1024" height="695"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jackie" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="13" id="Ity-Ng-esB">
+                                <rect key="frame" x="442" y="684" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Papyrus-Condensed" family="Papyrus" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Where is the treasure?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="13" id="7Ql-Re-JhQ">
+                                <rect key="frame" x="264" y="110" width="497" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Papyrus-Condensed" family="Papyrus" pointSize="39"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="klB-jp-yO9" customClass="FBProfilePictureView">
-                                <rect key="frame" x="15" y="93" width="97" height="97"/>
+                                <rect key="frame" x="477" y="593" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="profile_frame.png" id="ykP-gj-yTk">
+                                <rect key="frame" x="459" y="575" width="107" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -36,7 +51,9 @@
                     <connections>
                         <outlet property="backgroundFadeView" destination="oK8-hs-RBO" id="rJV-ev-RfM"/>
                         <outlet property="labelFirstName" destination="Ity-Ng-esB" id="M4x-lF-GWR"/>
+                        <outlet property="profileFrameView" destination="ykP-gj-yTk" id="bhE-xq-F0n"/>
                         <outlet property="profilePic" destination="klB-jp-yO9" id="jKx-co-Fv6"/>
+                        <outlet property="vintageBGView" destination="CL5-YA-D7o" id="rWL-A6-U0w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wp-5C-5xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,6 +63,8 @@
     </scenes>
     <resources>
         <image name="fade_bg.png" width="1024" height="400"/>
+        <image name="profile_frame.png" width="168" height="168"/>
+        <image name="vintage_bg.png" width="1024" height="748"/>
     </resources>
     <classes>
         <class className="FBProfilePictureView" superclassName="UIView">
@@ -56,7 +75,9 @@
             <relationships>
                 <relationship kind="outlet" name="backgroundFadeView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="labelFirstName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileFrameView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="profilePic" candidateClass="FBProfilePictureView"/>
+                <relationship kind="outlet" name="vintageBGView" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>

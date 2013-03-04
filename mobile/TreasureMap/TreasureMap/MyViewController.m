@@ -13,7 +13,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "SMCalloutView/SMCalloutView.h"
 
-static const CGFloat CalloutYOffset = 80.0f;
+static const CGFloat CalloutYOffset = 50.0f;
 
 /* SF */
 static const CLLocationDegrees DefaultLatitude = 37.76643;
@@ -154,12 +154,13 @@ static const CGFloat DefaultZoom = 17.5f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    swich_img = FALSE;
+    //swich_img = FALSE;
     
     // load json
     self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"https://raw.github.com/chawei/treasure_map/master/web/js/sample.json"]];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://raw.github.com/chawei/treasure_map/master/web/js/sample.json"]];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://steampunk.firebaseio.com/users.json"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://dl.dropbox.com/u/14359170/map-users.json"]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     self.calloutView = [[SMCalloutView alloc] init];
@@ -175,7 +176,7 @@ static const CGFloat DefaultZoom = 17.5f;
     
     //NSLog(@"%.0f,%.0f",self.view.bounds.size.width,self.view.bounds.size.height);
     //CGRectMake(0.0f, 100.0f, 648.0f, 1024.0f)
-    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0.0f, 200.0f, 748.0f, 824.0f) camera:cameraPosition];
+    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0.0f, 50.0f, 748.0f, 974.0f) camera:cameraPosition];
     self.mapView.delegate = self;
     
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -203,10 +204,11 @@ static const CGFloat DefaultZoom = 17.5f;
     
     loginview.frame = CGRectOffset(loginview.frame, 5, 5);
     loginview.delegate = self;
-    
+    [self.view addSubview:vintageBGView];
     [self.view addSubview:loginview];
     [self.view addSubview:_profilePic];
     [self.view addSubview:_labelFirstName];
+    [self.view addSubview:profileFrameView];
     
     [loginview sizeToFit];
     
@@ -326,17 +328,86 @@ static const CGFloat DefaultZoom = 17.5f;
         }
     ];
     */
-    UIImage *pinImage;
+    
+    
+    UIImage * pinImage;
+    NSString * uname;
+    
+    //pinImage = [UIImage imageNamed:@"profile_marker"];
+    for (id key in markers){
+        
+        id user = [markers objectForKey:key];
+        
+        //NSLog([user[@"fb_info"] description]);
+        /*
+        if ([user[@"fb_info"][@"id"] isEqualToString:@"507483763"])
+        {
+            pinImage = [UIImage imageNamed:@"profile_marker"];
+            
+        }else{
+            pinImage = [UIImage imageNamed:@"profile_marker2"];
+        }
+         */
+        
+        uname = user[@"fb_info"][@"name"];
+        
+        
+        pinImage = [UIImage imageNamed:[NSString stringWithFormat:@"chest%d",(arc4random()%3)+1]];
+        
+        /*
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture",user[@"fb_info"][@"id"]]];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        pinImage = [[UIImage alloc] initWithData:data];
+        */
+        
+        for (NSDictionary *marker in user[@"checkins"]) {
+            
+            if ([marker objectForKey:@"message"]){
+                GMSMarkerOptions *options = [[GMSMarkerOptions alloc] init];
+                
+                options.position = CLLocationCoordinate2DMake([marker[@"coordinates"][@"latitude"] doubleValue], [marker[@"coordinates"][@"longitude"] doubleValue]);
+                
+                //options.title = marker[@"place"][@"name"];
+                options.title = marker[@"message"];
+                
+                options.icon = pinImage;
+                NSMutableDictionary * dict_tmp = [[NSMutableDictionary alloc]init];
+                [dict_tmp setObject:user[@"fb_info"][@"id"] forKey:@"uid"];
+                
+                [dict_tmp setObject:uname forKey:@"uname"];
+                [dict_tmp setObject:marker[@"place"][@"name"] forKey:@"title"];
+                //[dict_tmp setObject:marker[@"message"] forKey:@"title"];
+                options.userData = dict_tmp;
+                
+                options.infoWindowAnchor = CGPointMake(0.5, 0.25);
+                options.groundAnchor = CGPointMake(0.5, 1.0);
+                
+                [self.mapView addMarkerWithOptions:options];
+            }
+        }
+         
+        
+    }
+    
+    
+    /*
+    UIImage * pinImage;
+    NSString * uname;
     
     pinImage = [UIImage imageNamed:@"profile_marker"];
     for (NSDictionary * user in markers[@"checkins"]){
         
+        
         if ([user[@"id"] isEqualToString:@"507483763"])
         {
             pinImage = [UIImage imageNamed:@"profile_marker"];
+            uname = @"Jackie";
         }else{
             pinImage = [UIImage imageNamed:@"profile_marker2"];
+            uname = @"David";
         }
+        
+        pinImage = [UIImage imageNamed:[NSString stringWithFormat:@"chest%d",(arc4random()%3)+1]];
         
         for (NSDictionary *marker in user[@"data"]) {
             GMSMarkerOptions *options = [[GMSMarkerOptions alloc] init];
@@ -346,8 +417,12 @@ static const CGFloat DefaultZoom = 17.5f;
             options.title = marker[@"place"][@"name"];
             
             options.icon = pinImage;
+            NSMutableDictionary * dict_tmp = [[NSMutableDictionary alloc]init];
+            [dict_tmp setObject:user[@"id"] forKey:@"uid"];
             
-            options.userData = marker;
+            [dict_tmp setObject:uname forKey:@"uname"];
+            [dict_tmp setObject:marker[@"place"][@"name"] forKey:@"title"];
+            options.userData = dict_tmp;
             
             options.infoWindowAnchor = CGPointMake(0.5, 0.25);
             options.groundAnchor = CGPointMake(0.5, 1.0);
@@ -356,6 +431,7 @@ static const CGFloat DefaultZoom = 17.5f;
         }
     
     }
+     */
     
     /*
     for (NSDictionary *marker in markers) {
@@ -381,8 +457,8 @@ static const CGFloat DefaultZoom = 17.5f;
         NSDictionary *userData = marker.userData;
         
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:userData[@"place"][@"name"]
-                                                            message:userData[@"place"][@"location"][@"city"]
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:userData[@"title"]
+                                                            message:[NSString stringWithFormat:@"%@ was here.",userData[@"uname"]]
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];

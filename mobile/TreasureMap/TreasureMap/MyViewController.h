@@ -16,11 +16,13 @@
 @interface MyViewController : UIViewController<CLLocationManagerDelegate,FBLoginViewDelegate>{
     CLLocationManager *locationManager;
     IBOutlet UIImageView * backgroundFadeView;
+    IBOutlet UIImageView * vintageBGView;
+    IBOutlet UIImageView * profileFrameView;
     NSString * sync_data;
     NSDictionary * profile_me;
     NSDictionary * markers;
-    NSDictionary * markers_other;
-    bool swich_img;
+    //NSDictionary * markers_other;
+    //bool swich_img;
     //float lat,lon;
 }
 
