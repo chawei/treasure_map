@@ -1,0 +1,100 @@
+body { 
+  margin:0; 
+  padding:0; 
+  font-family: 'Opensans', Arial, sans-serif;
+}
+#map { 
+  position:absolute; 
+  top:0; 
+  bottom:0; 
+  width:100%; 
+}
+
+.marker-image {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  margin-left: -16px;
+  margin-top: -16px;
+  pointer-events: all;
+  position: absolute;
+}
+.marker-image.bookmarked {
+  border: 1px solid #3887BE;
+}
+
+.marker-tooltip {
+  
+}
+  .marker-title {
+    font-size: 13px;
+  }
+    .save_btn {
+      margin-left: 10px;
+      color: #3887BE;
+    }
+  .marker-description {
+    font-size: 11px;
+    color: #999;
+  }
+
+#fb_login {
+  position: absolute;
+  z-index: 100;
+  top: 5px;
+  right: 5px;
+  
+  font-size:13px;
+  background: #3887BE;
+  color:#FFF;
+  display:block;
+  margin:0;
+  padding:10px;
+  border:1px solid #3887BE;
+  min-width:138px;
+  text-decoration:none;
+}
+
+#bookmarks {
+  position: absolute;
+  z-index: 100;
+  bottom: 40px;
+  left: 10px;
+}
+  .bookmark {
+    margin-top: 1px;
+    background: #f6f6f6;
+    color: #333;
+    padding: 10px;
+    font-size: 13px;
+    width: 300px;
+    min-height: 20px;
+  }
+  .bookmark .shared_by {
+    float: left;
+    margin: 0 6px 0 0;
+    width: 20px;
+  }
+  .bookmark .name {
+    float: left;
+    margin: 2px 0 0;
+    width: 220px;
+  }
+  
+  .remove_btn {
+    float: right;
+    color: #3887BE;
+  }
+
+.hidden {
+  display: none;
+}
+
+.cf:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}

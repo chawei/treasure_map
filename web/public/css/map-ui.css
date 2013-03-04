@@ -1,11 +1,13 @@
 #map-ui {
    position:absolute;
-   top:10px;left:10px;
+   top: 50px;
+   left: 10px;
    z-index:100;
    }
    #map-ui ul {
-     list-style:none;
-     margin:0;padding:0;
+      list-style:none;
+      margin: 2px 0 0;
+      padding:0;
      }
      #map-ui a {
        font-size:13px;

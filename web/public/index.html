@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkins</title>
+  
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+  
+  <link href='css/app.css' rel='stylesheet' />
+  <link href='css/map-ui.css' rel='stylesheet' />
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>
+    var fbAppId = "589138441115786";
+    if (window.location.href.search("localhost") !== -1) {
+      fbAppId = "313458608757859";
+    }
+    window.fbAsyncInit = function() {
+      // init the FB JS SDK
+      FB.init({
+        appId      : fbAppId, // App ID from the App Dashboard
+        channelUrl : '//checkinmap.herokuapp.com/channel.html', // Channel File for x-domain communication
+        status     : true, // check the login status upon init?
+        cookie     : true, // set sessions cookies to allow your server to access the session?
+        xfbml      : true  // parse XFBML tags on this page?
+      });
+
+      // Additional initialization code such as adding Event Listeners goes here
+      FB.Event.subscribe('auth.statusChange', function(response) {
+        if(response.status == 'connected') {
+          var uid = response.authResponse.userID;
+          var accessToken = response.authResponse.accessToken;
+          console.log(response.authResponse);
+          var fbLogin = document.getElementById('fb_login');
+          fbLogin.innerHTML = 'Welcome';
+          App.init(uid);
+        }
+      });
+    };
+
+    // Load the SDK's source Asynchronously
+    // Note that the debug version is being actively developed and might 
+    // contain some type checks that are overly strict. 
+    // Please report such bugs using the bugs tool.
+    (function(d, debug){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document, /*debug*/ false));
+  </script>
+  <a id="fb_login" href="#">Facebook Login</a>
+  
+  <div id='map-ui' class="hidden">
+    <!--
+    <ul>
+      <li><a id="filter_bookmark_btn" href='#' class='active' user-id=''>saved</a></li>
+    </ul>
+    -->
+    
+    <ul id="my_filter">
+      <li><a id="me_btn" href='#' class='filter active' user-id=''>me</a></li>
+    </ul>
+    
+    <ul id="friend_filter">
+    </ul>
+  </div>
+  
+  <div id="bookmarks"></div>
+  <div id='map'></div>
+
+  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
