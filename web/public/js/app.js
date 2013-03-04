@@ -146,7 +146,7 @@ App.prototype = {
     interaction.formatter(function(feature) {
       var o = ['<div class="marker-title" user-id="', feature.properties["user-id"], '" checkin-id="', feature.properties["checkin-id"], '">',
                   feature.properties.title,
-                  '<a class="save_btn" href="#">save</a>',
+                  '<a class="save_btn" href="#">mark it</a>',
                 '</div>',
                 '<div class="marker-description">',
                   feature.properties.description,
